@@ -1,0 +1,771 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Intro</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3446ddf5-5995-808e-88c3-ebf29b0f65dd" class="page sans"><header><h1 class="page-title" dir="auto">Intro</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-804f-b316-f95d7f48f290"/></div><div style="display:contents" dir="auto"><h1 id="3446ddf5-5995-8040-a7df-dc4d0000158d" class=""><strong>1. Introduction to Computing </strong></h1></div><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-809c-be6a-c098a6c1152b" class=""><strong>What is a Computer Language?</strong></h3></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-80b0-9389-f41dc034af7e" class="">A <strong>computer language</strong> is a formal language used to give instructions to a computer so it can perform specific tasks.</p></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-80cc-bc4b-cdb70cb22bb2" class="">Computers <strong>do not understand human languages</strong> like English or Tamil.</p></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-8004-b83f-d1d1eb80e6fc" class="">They only understand <strong>binary (0s and 1s)</strong>.</p></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-80a8-8a76-fa8f5761b067" class="">So, we use programming languages as an <strong>intermediate layer</strong>.</p></div><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-801e-a9ae-e29a92aebbf1"/></div><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-805e-8688-cb1356e8845b" class=""><strong>Types of Computer Languages</strong></h3></div><div style="display:contents" dir="auto"><div id="3446ddf5-5995-80c3-90c3-c421c45f43b9" class="column-list"><div style="display:contents" dir="auto"><div id="3446ddf5-5995-80bb-821d-f29293a0b2ea" style="width:43.75%" class="column"><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-801d-94b2-df21ca0936f2" class=""><strong>1. Machine Language</strong></h3></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8007-8f7e-d5c6712bf153" class="bulleted-list"><li style="list-style-type:disc">Written in <strong>binary (0 and 1)</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-802c-bc0f-e97009973b24" class="bulleted-list"><li style="list-style-type:disc">Directly understood by the CPU</li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8084-bc53-c1c3f409e674" class="bulleted-list"><li style="list-style-type:disc">No translation required</li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-80d1-b546-e64918774af1" class="bulleted-list"><li style="list-style-type:disc">Example: <code>1010 0011</code></li></ul></div></div></div><div style="display:contents" dir="auto"><div id="3446ddf5-5995-805b-b8ce-c27441226c0c" style="width:56.25000000000002%" class="column"><div style="display:contents" dir="ltr"><figure id="3446ddf5-5995-80c0-a93d-f4f6777d0cd1" class="image" style="text-align:left"><a href="image.png"><img style="width:192px" src="image.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-8089-8611-e2a1dd8737fd" class=""><strong>Key Point:</strong> Fast but very hard for humans to write and debug.</p></div><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-8045-9528-e3f4574f758d"/></div><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-8058-a2cf-c5695d0a72aa" class=""><strong>2. Assembly Language</strong></h3></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8006-8b0e-e31460e10a6f" class="bulleted-list"><li style="list-style-type:disc">Uses <strong>mnemonic codes</strong> instead of binary</li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-80e6-a69c-f5e19cafe426" class="bulleted-list"><li style="list-style-type:disc">Example: <code>ADD A, B</code></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-80c1-83e8-c4cb8a3b63ff" class="bulleted-list"><li style="list-style-type:disc">Requires an <strong>assembler</strong> to convert into machine code</li></ul></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-80e6-85cb-f083ed6d7412" class=""><strong>Key Point:</strong> Easier than machine language, but still low-level.</p></div><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-8084-9977-f11bf8754fbd"/></div><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-8090-9903-cf17f663d741" class=""><strong>3. High-Level Language</strong></h3></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-80f0-8b92-d86b5c314ddc" class="bulleted-list"><li style="list-style-type:disc">Human-readable and easy to write</li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-809a-bd79-fa50473d078b" class="bulleted-list"><li style="list-style-type:disc">Examples: <strong>C, Java, Python</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8089-a82d-e2a2432dd5a3" class="bulleted-list"><li style="list-style-type:disc">Requires a <strong>compiler or interpreter</strong></li></ul></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-8056-976c-fc88ae2ad18d" class=""><strong>Key Point:</strong> Most commonly used in real-world programming.</p></div><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-809b-b0d8-d6c212021985"/></div><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-80f3-942c-d82f022c8fde" class=""><strong>Why Do We Need Computer Languages?</strong></h3></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-809d-b571-d7edf2b89c23" class="bulleted-list"><li style="list-style-type:disc">Humans think in <strong>natural language</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8089-ac39-c150efea07fa" class="bulleted-list"><li style="list-style-type:disc">Computers understand only <strong>binary</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-80b9-ae31-c2e54f7b5036" class="bulleted-list"><li style="list-style-type:disc">So, a <strong>translator</strong> is required</li></ul></div><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-8068-bcad-fa2eab7f53fb"/></div><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-809f-bb1d-c784b5e88332" class=""><strong>Translation Process</strong></h3></div><div style="display:contents" dir="ltr"><table id="3446ddf5-5995-80bb-a878-e9c5bb6f8967" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="3446ddf5-5995-8039-9a50-d2160080b4f7"><th id="t=;y" class="simple-table-header-color simple-table-header">Human Instruction</th><th id="cr~q" class="simple-table-header-color simple-table-header">Program</th><th id=";VEk" class="simple-table-header-color simple-table-header">Translation</th><th id="v\w:" class="simple-table-header-color simple-table-header">Machine Execution</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="3446ddf5-5995-808b-b8f8-d85581799f89"><td id="t=;y" class="">Add 2 and 3</td><td id="cr~q" class="">C Code</td><td id=";VEk" class="">Interpreter/Compiler</td><td id="v\w:" class="">Binary Execution</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-8061-9102-d70c6b9e164f"/></div><div style="display:contents" dir="auto"><h3 id="3446ddf5-5995-8038-b395-f07353a3cdf9" class=""><strong>Real-World Analogy</strong></h3></div><div style="display:contents" dir="auto"><p id="3446ddf5-5995-80ed-a149-c4c2e1b86730" class="">Think of watching a foreign movie:</p></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8051-85b5-d8c2c38f0933" class="bulleted-list"><li style="list-style-type:disc">Movie language → <strong>High-level code (C/Java)</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8065-be71-e583f605b2be" class="bulleted-list"><li style="list-style-type:disc">Translator → <strong>Interpreter/Compiler</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8056-a207-e0580d51bbad" class="bulleted-list"><li style="list-style-type:disc">Subtitles → <strong>Machine-understandable format</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3446ddf5-5995-8075-bacc-f061ebb0d82e" class="bulleted-list"><li style="list-style-type:disc">You → <strong>Computer<br/><br/></strong></li></ul></div><div style="display:contents" dir="auto"><div id="3446ddf5-5995-808b-8756-d14b151b606c" class="column-list"><div style="display:contents" dir="auto"><div id="3446ddf5-5995-8049-b060-c361768e852c" style="width:25%" class="column"><div style="display:contents" dir="ltr"><figure id="3446ddf5-5995-801c-b152-ef955a4f988f" class="image"><a href="image%201.png"><img style="width:240px" src="image%201.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="3446ddf5-5995-80fb-84b5-f64468a7498c" style="width:25%" class="column"><div style="display:contents" dir="ltr"><figure id="3446ddf5-5995-80a1-875b-ca78cb6995d2" class="image"><a href="image%202.png"><img style="width:144px" src="image%202.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="3446ddf5-5995-80ba-9a8e-fd9873a0dde4" style="width:25%" class="column"><div style="display:contents" dir="ltr"><figure id="3446ddf5-5995-8064-ac3a-e31ffdd4ee67" class="image"><a href="image%203.png"><img style="width:144px" src="image%203.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="3446ddf5-5995-809e-8e44-e6f6462a5324" style="width:25%" class="column"><div style="display:contents" dir="ltr"><figure id="3446ddf5-5995-80b9-a984-ed66ccd4557f" class="image"><a href="image%204.png"><img style="width:240px" src="image%204.png"/></a></figure></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="3446ddf5-5995-80b9-abe4-d80aeea938eb"/></div><div style="display:contents" dir="auto"><h1 id="3456ddf5-5995-80d0-8082-c3c75e9e1027" class=""><strong>Creating and Running a Program</strong></h1></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80cb-a4d4-f5eaf073ba97" class=""><strong>Steps</strong></h3></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-804b-b452-f8ac4589933c" class="numbered-list" start="1"><li><strong>Write Code</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80fa-b705-d07affe40af5" class="">You write the program using a high-level language (C, Java, etc.).</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-805f-8035-f2013f5783ab" class="numbered-list" start="2"><li><strong>Compile</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-809c-a46a-dd2e7e23ca16" class="">The compiler converts your code into machine-level instructions.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-80e4-92c8-cb2ff2fc44ad" class="numbered-list" start="3"><li><strong>Link</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8003-bc2e-f9fb394e734f" class="">Required libraries (like <code>stdio.h</code>) are connected to your program.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-805d-b9c5-ccf9be3a9d85" class="numbered-list" start="4"><li><strong>Execute</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80a6-b814-f3b4bd9bbcd7" class="">The final program runs and produces output.</p></div></li></ol></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8039-8f64-f4007f61759b"/></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-80c2-9749-fc8b5c3fb161" class=""><strong>Example Program (C)</strong></h2></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js" integrity="sha512-8VrjxGFLIkS0mgEmO3p46A5OkqATHhrNVwyv2V7yUeZrk1jmSDuI3SOEpC9XHEHUWEOsfzzcJeBlUkee9lKGrw==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="3456ddf5-5995-8096-a5cd-d470bc6330cd" class="code code-wrap"><code class="language-c" style="white-space:pre-wrap;word-break:break-all">#include&lt;stdio.h&gt;
+
+int main()
+{
+    printf(&quot;Hello World&quot;);
+    return 0;
+}</code></pre></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80c9-8dc5-c59e7d94b25e"/></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-800f-b54a-cc97909c8a4f" class=""><strong>How It Actually Works</strong></h2></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8054-b120-dcbd7ca87612" class="">Think of it like watching a foreign movie:</p></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-8085-b108-fdc7728142ee" class="numbered-list" start="1"><li><strong>Writing the Code</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-809f-b8e3-eab3a5818815" class="">You write your program in C language and save it as <code>hello.c</code>.</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80c3-8af4-d609e6fc52d8" class="">At this stage, it&#x27;s just human-readable source code.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-80ce-b76f-fcfe297875aa" class="numbered-list" start="2"><li><strong>Preprocessing</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8050-aac3-fbae1d8cfeba" class="">This is the first hidden step done automatically.</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80df-a47b-e62f9ff4a77c" class="bulleted-list"><li style="list-style-type:disc">It expands <code>#include &lt;stdio.h&gt;</code> by inserting the actual library code.</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80d9-842b-e2021c93ebc5" class="bulleted-list"><li style="list-style-type:disc">It removes all comments.</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80d6-9265-d227005a08bd" class="bulleted-list"><li style="list-style-type:disc">It processes macros (<code>#define</code>).<br/>The output is still C code, but fully expanded.</li></ul></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-8046-ad31-fbfc31d70777" class="numbered-list" start="3"><li><strong>Compilation</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80a2-a0c1-e918d65d2341" class="">The compiler now translates the preprocessed C code into <strong>assembly language</strong>.</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8068-a120-de7c85b66d2c" class="bulleted-list"><li style="list-style-type:disc">Input: Expanded C code</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8009-a94f-febfb8814660" class="bulleted-list"><li style="list-style-type:disc">Output: <code>hello.s</code> (assembly file)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8098-bf1c-c38bdfb45976" class="">Assembly is low-level but still human-readable. It contains instructions specific to the processor.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-80cb-8023-f5fdffd58e45" class="numbered-list" start="4"><li><strong>Assembly</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8034-82bb-e0e6e2c25c28" class="">The assembler converts the assembly code into <strong>machine code</strong> (binary).</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8033-ab2d-caabc2055af9" class="bulleted-list"><li style="list-style-type:disc">Input: <code>hello.s</code></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8031-b8a9-e4971eaf7ba6" class="bulleted-list"><li style="list-style-type:disc">Output: <code>hello.o</code> (object file on Linux/Mac) or <code>hello.obj</code> (on Windows)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80f3-a30a-d551d446b71a" class="">This file contains actual binary instructions, but it&#x27;s not yet a complete program.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-80f3-93cc-e879daa9bd91" class="numbered-list" start="5"><li><strong>Linking</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8003-82a0-e981d81bddf1" class="">The linker combines your object file with necessary library functions (like <code>printf</code> from the standard library).</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80e0-9320-fcaaf12d6693" class="bulleted-list"><li style="list-style-type:disc">Input: <code>hello.o</code> + library files</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-801d-a79d-c9ffd92136b6" class="bulleted-list"><li style="list-style-type:disc">Output: <code>a.out</code> (default on Linux) or <code>hello.exe</code> (on Windows)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80c3-8183-d2d6ee108d24" class="">This final file is a complete executable.</p></div></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-80a5-8145-f1dfb92bc187" class="numbered-list" start="6"><li><strong>Execution</strong><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80db-94dd-e69810788f0b" class="">When you run the executable, the operating system loads it into memory, and the CPU starts executing the machine instructions.</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-808e-9485-d2760271f6e7" class="">Your program finally runs and produces output: Hello World</p></div></li></ol></div><div style="display:contents" dir="ltr"><figure id="3456ddf5-5995-806e-9a89-de00cc5334ed" class="image"><a href="image%205.png"><img style="width:703.9750366210938px" src="image%205.png"/></a></figure></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-804c-b955-de96060ec51a"/></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-802c-b47b-d4b7e7f21ba5" class="">
+</p></div><div style="display:contents" dir="auto"><h1 id="3456ddf5-5995-8069-9a93-f23376717f11" class=""><strong>System Development</strong></h1></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-809e-9614-c2efd716776c" class="">System development is the <strong>process of creating software systems</strong> to solve a problem or fulfill user needs.</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80b7-ac4a-c2b1505d6266"/></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-8053-9001-e53e148f2f5f" class=""><strong>Main Stages</strong></h2></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-806e-a497-d184fe4c8aa3" class=""><strong>1. Requirement Analysis</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8043-bddb-fe86c01bd869" class="bulleted-list"><li style="list-style-type:disc">Understand what the user needs</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80f9-9e25-e63398ca277e" class="bulleted-list"><li style="list-style-type:disc">Gather and define requirements</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-801d-9a6f-fdbb343be43e" class=""><em>Example: User wants a login system</em></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8009-924f-c35b8bbddb6b"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-801a-8bf2-cbe5afa1724b" class=""><strong>2. Design</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80f6-b6f4-f2305f7664d9" class="bulleted-list"><li style="list-style-type:disc">Plan how the system will work</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8027-aa89-efc602461b6a" class="bulleted-list"><li style="list-style-type:disc">Decide structure, database, UI</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-804c-923e-ed3ee7304d32" class=""><em>Example: Design login page, database schema</em></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8034-8733-f7d2e2e303d6"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-803d-a679-f6fe91f48ede" class=""><strong>3. Coding</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-806e-aaeb-d6ad3fca602b" class="bulleted-list"><li style="list-style-type:disc">Write the actual program</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80fe-be02-ea68ced9460e" class="bulleted-list"><li style="list-style-type:disc">Convert design into code</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-804a-adad-cec4df15e6ea" class=""><em>Example: Implement login logic using Java/Python</em></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8013-9c4b-d52aac71c4d9"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-808b-8bc2-cd5177de5e7e" class=""><strong>4. Testing</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-808c-ab63-fffff61a41b5" class="bulleted-list"><li style="list-style-type:disc">Check for errors and bugs</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-806e-a896-d026cbf8a864" class="bulleted-list"><li style="list-style-type:disc">Ensure the system works correctly</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-809e-864f-dc2e5c161fbb" class=""><em>Example: Test valid/invalid login cases</em></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80b5-8f4f-f0ecb01cea18"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80e7-adb1-cebf96cf28f5" class=""><strong>5. Deployment</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-800c-ac10-f14ba3e2f368" class="bulleted-list"><li style="list-style-type:disc">Release the software to users</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-802e-aa01-fb6bfd315ed6" class="bulleted-list"><li style="list-style-type:disc">Make it live</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-801a-9437-e1275d4cfaf6" class=""><em>Example: Upload website to server</em></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8013-9cbe-ca2061a64f17"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8089-837d-d487d7f77e88" class=""><strong>6. Maintenance</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8042-83a3-c049168be0ca" class="bulleted-list"><li style="list-style-type:disc">Fix bugs and update features</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8082-bce9-d32706b72899" class="bulleted-list"><li style="list-style-type:disc">Improve performance over time</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80a6-b89e-ce676f3d99b7" class=""><em>Example: Add new features or fix login issues</em></p></div><div style="display:contents" dir="ltr"><figure id="3456ddf5-5995-801e-ae4d-e307be1bd062" class="image"><a href="image%206.png"><img style="width:704px" src="image%206.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80cc-8377-c5c1763929d6" class=""><strong>Analyze → Design → Code → Test → Deploy → Maintain</strong> to build reliable software.<br/></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80e0-858a-d61468ff6f9e"/></div><div style="display:contents" dir="auto"><h1 id="3456ddf5-5995-80e6-927e-eb3dac3f03f9" class=""><strong>2. Overview of C</strong></h1></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80a9-8461-ecbbc29f4b17" class="">The C programming language is one of the most important and influential programming languages in the history of computing.</p></div><div style="display:contents" dir="auto"><div id="3456ddf5-5995-80d3-b4bd-f2cbc1f17fa8" class="column-list"><div style="display:contents" dir="auto"><div id="3456ddf5-5995-80ca-9a50-c889ce1e2a54" style="width:31.25%" class="column"><div style="display:contents" dir="ltr"><figure id="3456ddf5-5995-8057-8f18-c5afba0f8e80" class="image" style="text-align:left"><a href="image%207.png"><img style="width:209px" src="image%207.png"/></a></figure></div></div></div><div style="display:contents" dir="auto"><div id="3456ddf5-5995-8060-930c-ea0955cf0b14" style="width:68.75%" class="column"><div style="display:contents" dir="auto"><p id="3456ddf5-5995-802b-9966-e2e8473dcd8e" class="">It was developed by <strong>Dennis Ritchie</strong> in the year <strong>1972</strong> at <strong>Bell Laboratories (Bell Labs)</strong> in the United States. The main purpose of creating C was to develop the <strong>Unix operating system</strong>, which was one of the earliest and most powerful operating systems at that time.</p></div></div></div></div></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8028-9763-ef342694ecee"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-801e-baee-f4be38b7b3ce" class=""><strong>Why C Was Created</strong></h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80b9-a5cd-f6a8850b8da0" class="">Before C, programming was mainly done using:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-803f-96f1-cb86119c2bd3" class="bulleted-list"><li style="list-style-type:disc"><strong>Machine language</strong> (very difficult)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8049-85b1-d810c2fdd765" class="bulleted-list"><li style="list-style-type:disc"><strong>Assembly language</strong> (slightly better but still complex)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80fe-8bb7-f259078d0ed2" class="">These languages were:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80af-a9ca-f30274e1d858" class="bulleted-list"><li style="list-style-type:disc">Hard to write</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80d4-bcb5-d97c98ee7d66" class="bulleted-list"><li style="list-style-type:disc">Hard to understand</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-804c-9007-dc9deed5bdc0" class="bulleted-list"><li style="list-style-type:disc">Not portable (could not run on different machines)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8080-8518-c289493e690a" class="">So, there was a need for a language that was:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8097-bf63-d09349e2eecc" class="bulleted-list"><li style="list-style-type:disc">Easier to write</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8092-8617-dd439324adf7" class="bulleted-list"><li style="list-style-type:disc">Efficient like low-level languages</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80da-8b3e-c317fb7c89d8" class="bulleted-list"><li style="list-style-type:disc">Portable across systems</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8091-8683-fe1fa1723cc0" class="">That’s where C came into the picture.</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8019-8b7e-f5ed32fb55f1"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-802d-9417-d1589b01d924" class=""><strong>Evolution of C</strong></h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-808b-a568-f407f1035762" class="">C did not appear suddenly. It evolved from earlier languages:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-809e-b83f-fde3d01d0096" class="bulleted-list"><li style="list-style-type:disc"><strong>BCPL (Basic Combined Programming Language)</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-807d-8d13-ff2e049ada88" class="bulleted-list"><li style="list-style-type:disc">Then → <strong>B language</strong> (developed by Ken Thompson)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80a3-bf87-fc43d4dff127" class="bulleted-list"><li style="list-style-type:disc">Finally → <strong>C language</strong> (improved by Dennis Ritchie)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80d4-a369-fe123c75e0f1" class="">C was designed by improving the limitations of B language and adding more powerful features.</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80f7-be56-d200f2ae0dad"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80d3-a2ff-f469e4fcac02" class=""><strong>Role of C in Unix Development</strong></h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80e6-8333-ca024763f875" class="">C became very popular because it was used to develop the <strong>Unix operating system</strong>.</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-807c-b40f-eb447c8be625" class="">Before this:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80f1-9e7d-c54be100d840" class="bulleted-list"><li style="list-style-type:disc">Operating systems were written in assembly language</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80b2-8224-df0cc7ffdc28" class="">But Unix was written in C, which made it:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80ca-8980-e13c5ac86ba8" class="bulleted-list"><li style="list-style-type:disc">Easier to maintain</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8029-adb2-c3f0b4f696ef" class="bulleted-list"><li style="list-style-type:disc">Easier to modify</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8076-9219-dbe56156ef8b" class="bulleted-list"><li style="list-style-type:disc">Portable to different machines</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8039-917d-f9edcc336204" class="">This was a <strong>major breakthrough</strong> in computing.</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8050-adfc-c017ef380d04"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8050-ad47-dab4813b3ac1" class=""><strong>Why C Became So Popular</strong></h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8067-a9b3-f2d08785f362" class="">C gained popularity because it has a perfect balance between:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80ea-83d3-f2530002d905" class="bulleted-list"><li style="list-style-type:disc"><strong>Low-level features</strong> (like memory access, pointers)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-800d-9e43-e45e3c49450a" class="bulleted-list"><li style="list-style-type:disc"><strong>High-level features</strong> (like functions, loops)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80f3-b990-caedcbd56819" class="">So it is often called:</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8045-b562-c847731348da" class=""><strong>Middle-level programming language</strong></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80e6-bed5-e0924d2b15ec"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8030-8e69-fcd6dc981c26" class=""><strong>Key Features of C</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80f0-9c34-f964af8623c9" class="bulleted-list"><li style="list-style-type:disc">Fast and efficient</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80b9-ac72-c8405b6644ca" class="bulleted-list"><li style="list-style-type:disc">Portable (runs on different systems)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80de-bb6a-c98eeda99c78" class="bulleted-list"><li style="list-style-type:disc">Structured programming support</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80b8-9d82-f174690b20a9" class="bulleted-list"><li style="list-style-type:disc">Close to hardware (used in system programming)</li></ul></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80eb-971a-fdaa3d6e2ce5"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8085-8977-e363848a803f" class=""><strong>Impact of C Language</strong></h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8091-a882-f6c30e78d7c3" class="">C influenced many modern programming languages such as:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8071-bb20-fba14b76b00e" class="bulleted-list"><li style="list-style-type:disc">C++</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8088-bcc6-fadf3a07c3d8" class="bulleted-list"><li style="list-style-type:disc">Java</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80ab-93b6-dd91dfc10822" class="bulleted-list"><li style="list-style-type:disc">C#</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8067-9632-ed93c679ae45" class="bulleted-list"><li style="list-style-type:disc">JavaScript (syntax influenced)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80b7-bfe9-d684f0213486" class="">Even today, C is used in:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80fd-9dbc-f0aec2c57405" class="bulleted-list"><li style="list-style-type:disc">Operating systems</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80fe-8ef6-d872af3d5902" class="bulleted-list"><li style="list-style-type:disc">Embedded systems</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8034-96c8-cff885d07012" class="bulleted-list"><li style="list-style-type:disc">Compilers</li></ul></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80df-9fdf-d05663d57422"/></div><div style="display:contents" dir="auto"><h1 id="3456ddf5-5995-8045-acf5-ef1f87a7f6c2" class=""><strong>Features of C Language</strong></h1></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8080-a040-c9a1e92ceb6e" class="">C is a powerful and flexible programming language that is known for three important characteristics:</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80a7-bee8-cf55c7e0d66c" class=""> It is a <strong>middle-level language</strong>, a <strong>structured language</strong>, and a <strong>programmer’s language</strong>.</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80f0-a444-e92adeae3fd7"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-809e-bf79-e0f08c4b171d" class=""><strong>1. C is a Middle-Level Language</strong></h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-806e-ba33-e11f587b2f8b" class="">C is called a <strong>middle-level language</strong> because it combines both <strong>low-level</strong> and <strong>high-level</strong> features.</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8036-a570-e3a8e837806e" class="bulleted-list"><li style="list-style-type:disc"><strong>Low-level features:</strong><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-803f-911e-d097dccdc927" class="bulleted-list"><li style="list-style-type:circle">Direct memory access using pointers</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8041-afd4-c8dbf026c6e0" class="bulleted-list"><li style="list-style-type:circle">Bitwise operations</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-800f-be78-c8c10495e285" class="bulleted-list"><li style="list-style-type:circle">Close interaction with hardware</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-804d-a35d-db0db55bba31" class="bulleted-list"><li style="list-style-type:disc"><strong>High-level features:</strong><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8018-af1b-ea20629ea480" class="bulleted-list"><li style="list-style-type:circle">Functions</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80c1-ad9e-e676dcfb5409" class="bulleted-list"><li style="list-style-type:circle">Loops (<code>for</code>, <code>while</code>)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8001-8b01-f81930d21fc7" class="bulleted-list"><li style="list-style-type:circle">Conditional statements (<code>if</code>, <code>switch</code>)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80f0-bb1e-c821a1333e13" class="">This combination allows C to act as a <strong>bridge between hardware and software</strong>.</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80db-a2f1-e7dca892ab22" class=""> Because of this, C is used in:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80c7-9405-dcca2de56966" class="bulleted-list"><li style="list-style-type:disc">Operating systems</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80d4-825e-febd62cd19e0" class="bulleted-list"><li style="list-style-type:disc">Embedded systems</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8097-9c44-e363b9ffcb48" class="bulleted-list"><li style="list-style-type:disc">System software</li></ul></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80c9-a566-e7610149d607" class=""><strong>Why It is Called Middle-Level</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8040-8480-cf94c1658e1f" class="bulleted-list"><li style="list-style-type:disc">It is <strong>not purely low-level</strong> like assembly</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-809c-846e-fbb10d8b9255" class="bulleted-list"><li style="list-style-type:disc">It is <strong>not purely high-level</strong> like Python</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8096-8781-e614caf4f761" class="">It combines both:</p></div><div style="display:contents" dir="ltr"><table id="3456ddf5-5995-8097-ad08-e2f8ae17d23a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="3456ddf5-5995-802e-bb1f-f6b9cad19b91"><th id="j}q@" class="simple-table-header-color simple-table-header">Feature Type</th><th id="nx&lt;}" class="simple-table-header-color simple-table-header">Capability</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="3456ddf5-5995-802e-9ecf-d26612c6a6f7"><td id="j}q@" class="">Low-Level</td><td id="nx&lt;}" class="">Memory access, hardware interaction</td></tr></div><div style="display:contents" dir="ltr"><tr id="3456ddf5-5995-806d-bc65-fe7768b4bc5d"><td id="j}q@" class="">High-Level</td><td id="nx&lt;}" class="">Functions, loops, readability</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8032-a5a0-e6dac6f889b1"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80f0-870f-e69d2a08cb42" class=""><strong>Real-World Understanding</strong></h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80d9-8c29-c21325aea6e9" class="">Think of C like a <strong>driver who can control both manual and automatic cars</strong>:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8063-8212-cacefd629874" class="bulleted-list"><li style="list-style-type:disc">Low-level → Manual control (full power over system)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8030-ae29-c6b6a319df4e" class="bulleted-list"><li style="list-style-type:disc">High-level → Automatic control (easy handling)</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-800f-af05-cbb6b84bf5a0" class="">C gives you <strong>both control and simplicity</strong></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8021-b998-ec2c30627d76"/></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-806e-a7d0-c5f2e9387c39"/></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-80d6-a1a9-e690d57000bb" class=""><strong>2. C is a Structured Language</strong></h2></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-808d-982a-eca15c65ac63" class="">C follows a <strong>structured programming approach</strong>, which means programs are divided into smaller parts.</p></div><div style="display:contents" dir="ltr"><figure id="3456ddf5-5995-802e-9cf0-da93c347d90a" class="image"><a href="image%208.png"><img style="width:480px" src="image%208.png"/></a></figure></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80fc-9253-d26ad8b2c2b5" class="bulleted-list"><li style="list-style-type:disc">Programs are organized using:<div style="display:contents" dir="auto"><ul id="3456ddf5-5995-808d-b659-d3ae44312d5f" class="bulleted-list"><li style="list-style-type:circle"><strong>Functions</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80fe-91f9-e1f4293c04eb" class="bulleted-list"><li style="list-style-type:circle"><strong>Loops</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80f3-957a-e40645d641e9" class="bulleted-list"><li style="list-style-type:circle"><strong>Conditions</strong></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8062-bb4e-c1c2162b3a33" class="">Basic structure:</p></div><div style="display:contents" dir="auto"><pre id="3456ddf5-5995-807e-863a-d9e765207530" class="code code-wrap"><code class="language-c" style="white-space:pre-wrap;word-break:break-all">main() {
+    // main logic
+}
+
+function1() {
+    // task
+}</code></pre></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80c2-9bf3-ff4145ce2b39" class=""><strong>1. </strong><code><strong>main()</strong></code><strong> Function</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8023-923d-fd7d7c07a128" class="bulleted-list"><li style="list-style-type:disc"><code>main()</code> is the <strong>starting point</strong> of every C program</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80a1-b333-e89d8851c5b5" class="bulleted-list"><li style="list-style-type:disc">Execution of the program always begins from here</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8094-b2c8-d1e7cb34d1e5" class="">Think of it like the <strong>entry gate</strong> of the program</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-802e-9bcf-d9c47694b7b5"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8072-a5cc-c6a9e7f842bf" class=""><strong>2. </strong><code><strong>{ }</strong></code><strong> (Curly Braces)</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80da-b54c-df9cda33dc25" class="bulleted-list"><li style="list-style-type:disc">These define a <strong>block of code</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8067-800e-e780b0fea883" class="bulleted-list"><li style="list-style-type:disc">Everything inside <code>{ }</code> is treated as one unit</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80b8-9ac6-fe646532cee3" class="">This is the core idea of structured programming:</p></div><div style="display:contents" dir="auto"><blockquote id="3456ddf5-5995-80fe-aa95-f10fc07aa14a" class="">Divide program into <strong>blocks</strong></blockquote></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80cd-917b-df4f92a2a2b4"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80c9-a23a-cc5d7c7309b3" class=""><strong>3. </strong><code><strong>// main logic</strong></code></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80ce-9a06-f12d05736c28" class="bulleted-list"><li style="list-style-type:disc">This represents the <strong>main operations</strong> of the program</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80a9-b38e-f4a8b9a5fab7" class="bulleted-list"><li style="list-style-type:disc">It can include:<div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8009-bd16-f69a935ae0c0" class="bulleted-list"><li style="list-style-type:circle">Function calls</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8066-92cf-fe9c1a04a5c6" class="bulleted-list"><li style="list-style-type:circle">Loops</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8043-91dd-c2eacbeef3c9" class="bulleted-list"><li style="list-style-type:circle">Conditions</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8009-8545-fce25e201727" class="">Instead of writing everything directly, we <strong>delegate tasks</strong> to other functions</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8095-9ade-fac547196c25"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80da-8431-e965ec0a8a92" class=""><strong>4. </strong><code><strong>function1()</strong></code></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80cd-af99-d8606b141fdb" class="bulleted-list"><li style="list-style-type:disc">This is a <strong>user-defined function</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8033-aa0c-ca38d08c59eb" class="bulleted-list"><li style="list-style-type:disc">It performs a <strong>specific task</strong></li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8039-a842-f6b265f0b38b" class="">Example:</p></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-807a-9d00-f6128fe14450" class="bulleted-list"><li style="list-style-type:disc">One function for login</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80b4-9be7-ec4e791d2037" class="bulleted-list"><li style="list-style-type:disc">One function for calculation</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-802e-89de-f1fccbfc11cc" class="bulleted-list"><li style="list-style-type:disc">One function for display</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80e3-a1b4-d7d996bf9a5a" class=""> This is called <strong>modular programming</strong></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-800c-a397-ffcc743a7bd0"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8083-9bac-f53aea7d3315" class=""><strong>5. Inside </strong><code><strong>function1()</strong></code></h3></div><div style="display:contents" dir="auto"><pre id="3456ddf5-5995-800d-8fbd-d731d465de94" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">// task</code></pre></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80b5-b6e5-c081af9ed542" class="bulleted-list"><li style="list-style-type:disc">Contains the <strong>actual logic for that specific task</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-804f-a4ec-cca3cd9a5675" class="bulleted-list"><li style="list-style-type:disc">Keeps code <strong>separate and organized</strong></li></ul></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-80f6-a9a0-e8ae87c4e7e9" class=""><strong>How Structure Works in Real Programs</strong></h2></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80f3-891d-dc9504a21bab" class="">A real structured C program looks like this:</p></div><div style="display:contents" dir="auto"><pre id="3456ddf5-5995-80c7-9bbb-fb5d2f62a889" class="code code-wrap"><code class="language-c" style="white-space:pre-wrap;word-break:break-all">#include&lt;stdio.h&gt;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(2, 3);
+    printf(&quot;%d&quot;, result);
+    return 0;
+}</code></pre></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80f9-b23e-ecf1e8d0a7a9" class="">readability, debugging, reusability, maintainability</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-804a-9e94-f1e3280c6d96"/></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8037-b86c-d4cc6893743d" class="">Compilers vs Interpreters</p></div><div style="display:contents" dir="ltr"><table id="3456ddf5-5995-80a1-8460-c26789b64d8a" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="3456ddf5-5995-803d-b05e-f07a194126bc"><th id="FrWp" class="simple-table-header-color simple-table-header">Compiler</th><th id="KlbS" class="simple-table-header-color simple-table-header">Interpreter</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="3456ddf5-5995-8012-aaf3-d60f823f3854"><td id="FrWp" class="">Translates entire program</td><td id="KlbS" class="">Translates line by line</td></tr></div><div style="display:contents" dir="ltr"><tr id="3456ddf5-5995-8076-814e-e6d88d3a606b"><td id="FrWp" class="">Faster execution</td><td id="KlbS" class="">Slower execution</td></tr></div><div style="display:contents" dir="ltr"><tr id="3456ddf5-5995-803e-9c2e-c02888d823a2"><td id="FrWp" class="">Example: C compiler</td><td id="KlbS" class="">Example: Python interpreter</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80dd-ab37-de62e40683af" class="">The Form of a C Program</h3></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80fe-a342-c9875d104f4e" class="">Basic structure:</p></div><div style="display:contents" dir="auto"><div id="3456ddf5-5995-80b5-a7cd-c123fd979a6b" class="column-list"><div style="display:contents" dir="auto"><div id="3456ddf5-5995-8094-9de3-e9cd9c3d980b" style="width:50%" class="column"><div style="display:contents" dir="auto"><pre id="3456ddf5-5995-80e2-8abe-d58350331a58" class="code code-wrap"><code class="language-c" style="white-space:pre-wrap;word-break:break-all">#include&lt;stdio.h&gt;
+
+int main(){
+    // statements
+    return0;
+}</code></pre></div></div></div><div style="display:contents" dir="auto"><div id="3456ddf5-5995-80e3-8a47-f8a96cf119cb" style="width:50%" class="column"><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8068-93ae-f1fb6847079d" class="">Parts:</p></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-8060-8674-fac252efd38e" class="numbered-list" start="1"><li>Header files</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-809a-b5e4-d33a69e9ef92" class="numbered-list" start="2"><li>main() function</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-805f-9a04-c0ae3a922af6" class="numbered-list" start="3"><li>Program statements</li></ol></div></div></div></div></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-800b-af16-fd84dea03d0a" class=""><strong>How It Works Together</strong></h2></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-8029-b27d-fa1984d83e07" class="numbered-list" start="1"><li>Header file provides required functions</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-8050-9e57-cdf68ba6a4d9" class="numbered-list" start="2"><li>Program starts from <code>main()</code></li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-8099-9e33-f1848766881c" class="numbered-list" start="3"><li>Statements execute step by step</li></ol></div><div style="display:contents" dir="auto"><ol type="1" id="3456ddf5-5995-80c6-bf82-d005ce1a3ee3" class="numbered-list" start="4"><li>Program ends with <code>return 0;</code></li></ol></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8055-a91d-c8ad8a910878"/></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-803f-b262-f8bbde09214b" class=""><strong>Library </strong></h2></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8021-9de2-e450854ec8d8" class="">A <strong>library</strong> is a collection of <strong>predefined functions</strong>.</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80b6-892f-ca2c2ea636e1" class="">You don’t write them</p></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-80c2-bc17-d11354382fd5" class="">You just <strong>use them by including the header file</strong></p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-802f-8163-db2b9794e2ab"/></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-8024-93c0-e6c9a880a5fd" class=""><strong>Common C Libraries</strong></h2></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8068-b826-d06db19bfb25" class=""><strong>1. </strong><code><strong>stdio.h</strong></code><strong> (Standard Input Output)</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80a9-8a2a-fa79a505e8f9" class="bulleted-list"><li style="list-style-type:disc">Used for input and output</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8053-a0e5-d810c6656dc5" class="bulleted-list"><li style="list-style-type:disc">Functions:<div style="display:contents" dir="auto"><ul id="3456ddf5-5995-809a-9009-e8819de4c0ff" class="bulleted-list"><li style="list-style-type:circle"><code>printf()</code> → output</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8059-909e-fa47d13dbee8" class="bulleted-list"><li style="list-style-type:circle"><code>scanf()</code> → input</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80a5-a2e6-e9e1694a4ca1"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8029-b19c-cc6b7220f8a0" class=""><strong>2. </strong><code><strong>stdlib.h</strong></code><strong> (Standard Library)</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-805c-936f-ee98d3e2b62a" class="bulleted-list"><li style="list-style-type:disc">General utilities</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80dd-90d0-c490077d0902" class="bulleted-list"><li style="list-style-type:disc">Functions:<div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80da-bc5e-ef232f56b6e7" class="bulleted-list"><li style="list-style-type:circle"><code>malloc()</code> → memory allocation</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80d2-ae26-fedc873db4f0" class="bulleted-list"><li style="list-style-type:circle"><code>free()</code> → deallocation</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80e4-b327-fcd4fe306a91" class="bulleted-list"><li style="list-style-type:circle"><code>exit()</code></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80f1-a43f-da8a498499d7"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-8094-8c63-f3c31a3259d5" class=""><strong>3. </strong><code><strong>string.h</strong></code></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8008-824c-f618533e2f47" class="bulleted-list"><li style="list-style-type:disc">String operations</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80bf-a7e2-e90b12bdd41d" class="bulleted-list"><li style="list-style-type:disc">Functions:<div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8013-ab02-d95fc9b89f3c" class="bulleted-list"><li style="list-style-type:circle"><code>strlen()</code></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8051-89af-e9bc79137232" class="bulleted-list"><li style="list-style-type:circle"><code>strcpy()</code></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80f6-96e5-d70701c2b315" class="bulleted-list"><li style="list-style-type:circle"><code>strcmp()</code></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80c5-b687-eb613352b296"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80ea-9e0c-c47175795583" class=""><strong>4. </strong><code><strong>math.h</strong></code></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-809c-963b-d0571042f69e" class="bulleted-list"><li style="list-style-type:disc">Mathematical operations</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8028-808a-e2f96dee6b7f" class="bulleted-list"><li style="list-style-type:disc">Functions:<div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80d9-985a-dc10dda31cc7" class="bulleted-list"><li style="list-style-type:circle"><code>sqrt()</code></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80fc-82a6-da6abcebdb0b" class="bulleted-list"><li style="list-style-type:circle"><code>pow()</code></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80d6-98ab-e54fb75dd2f7" class="bulleted-list"><li style="list-style-type:circle"><code>sin()</code></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8071-ac6d-dd43376b9b7c"/></div><div style="display:contents" dir="auto"><h3 id="3456ddf5-5995-80ff-bfb6-d27940ed9330" class=""><strong>5. </strong><code><strong>conio.h</strong></code><strong> (Not Standard)</strong></h3></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-806f-81f6-db1c39bd4acb" class="bulleted-list"><li style="list-style-type:disc">Console input/output (mostly old compilers like Turbo C)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-80e4-bc99-c5b1c8c4480b" class="bulleted-list"><li style="list-style-type:disc">Functions:<div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8062-9c74-d0d479ea11e9" class="bulleted-list"><li style="list-style-type:circle"><code>getch()</code></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8033-bb5a-d1c906e759c6" class="bulleted-list"><li style="list-style-type:circle"><code>clrscr()</code></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8098-8f77-e60eced6f4aa"/></div><div style="display:contents" dir="auto"><h2 id="3456ddf5-5995-802c-a864-c03f0f4ac326" class=""><strong>What Linker Does</strong></h2></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-807f-9443-e3018131a1a4" class="bulleted-list"><li style="list-style-type:disc">Takes your object file (<code>hello.o</code>)</li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-8004-abcb-eef65828efd2" class="bulleted-list"><li style="list-style-type:disc">Finds the actual <code>printf</code> code from the <strong>standard library</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="3456ddf5-5995-803c-852f-d73f77b1f18e" class="bulleted-list"><li style="list-style-type:disc">Combines them</li></ul></div><div style="display:contents" dir="auto"><p id="3456ddf5-5995-8086-8baf-ee85d0044ecf" class=""> Now everything is complete</p></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-80e2-bcdf-eb9bb44bae86"/></div><div style="display:contents" dir="auto"><hr id="3456ddf5-5995-8020-9d3a-e4e06576ad8e"/></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
